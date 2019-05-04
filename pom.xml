@@ -7,6 +7,7 @@
         <module>cloud-api</module>
         <module>cloud-provider-dept</module>
         <module>cloud-consumer-dept</module>
+        <module>cloud-eureka-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -49,17 +50,23 @@
             <!--<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
             <!--</dependency>-->
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter</artifactId>-->
+                <!--<version>${springboot.version}</version>-->
+            <!--</dependency>-->
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter-web</artifactId>-->
+                <!--<version>${springboot.version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-devtools</artifactId>-->
+                <!--<version>${springboot.version}</version>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
@@ -174,5 +181,27 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <finalName>spring-cloud-demo</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                        <!--<delimit>$</delimit>-->
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
