@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: application #需要从配置中心读取的配置文件名,注意没有yml后缀名
+      profile: test #本次访问的配置项
+      label: master
+      uri: http://127.0.0.1:3344  #配置中心地址

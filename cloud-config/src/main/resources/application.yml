@@ -1,0 +1,15 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared #使用本地的配置存放点
+#        git:
+#          uri: git@github.com:lhyf/Javabase.git #使用github作为配置存放点

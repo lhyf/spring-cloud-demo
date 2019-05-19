@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: test
+
+---
+spring:
+  profiles: dev
+
+server:
+  port: 8201
+
+user:
+  name: aaaa
+  password: aaaa
+
+---
+spring:
+  profiles: test
+
+server:
+  port: 8202
+
+user:
+  name: bbbb
+  password: bbbb

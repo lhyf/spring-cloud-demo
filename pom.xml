@@ -8,6 +8,16 @@
         <module>cloud-provider-dept</module>
         <module>cloud-consumer-dept</module>
         <module>cloud-eureka-server</module>
+        <module>cloud-eureka-server-2</module>
+        <module>cloud-eureka-server-3</module>
+        <module>cloud-provider-dept-2</module>
+        <module>cloud-provider-dept-3</module>
+        <module>cloud-consumer-dept-feign</module>
+        <module>cloud-provider-dept-hystrix</module>
+        <module>cloud-consumer-dept-hystrix-dashboard</module>
+        <module>cloud-gateway-zuul</module>
+        <module>cloud-config</module>
+        <module>cloud-config-client</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

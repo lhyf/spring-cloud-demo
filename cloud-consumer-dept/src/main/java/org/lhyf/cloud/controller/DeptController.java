@@ -17,10 +17,12 @@ import java.util.List;
 @RequestMapping("/dept")
 public class DeptController {
 
-    private static final String REST_URL_PREFIX = "http://127.0.0.1:8001/provider";
+//    private static final String REST_URL_PREFIX = "http://127.0.0.1:8001/provider";
+    private static final String REST_URL_PREFIX = "http://PROVIDER-DEPT/provider";
 
     @Autowired
     private RestTemplate restTemplate;
+
 
     @PostMapping("/add")
     public boolean add(@RequestBody Dept dept) {
@@ -35,5 +37,14 @@ public class DeptController {
     @GetMapping("/list")
     public List<Dept> list() {
         return restTemplate.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
+    }
+
+    /**
+     * 测试@EnableDiscoveryClient, 消费端可以嗲用服务发现
+     * @return
+     */
+    @GetMapping("/discovery")
+    public Object discovery(){
+        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/discovery",Object.class);
     }
 }

@@ -1,0 +1,27 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+
+info:
+  app.name: gateway-zuul
+  company.name: www.lhyf.org
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+zuul:
+  prefix: /lhyf #加个访问前缀
+  #  ignored-services: provider-dept #忽略真实服务名
+  ignored-services: "*"            #忽略所有真实服务名
+  routes: #路由映射
+    mydept.path: /mydept/**
+    mydept.serviceId: provider-dept
